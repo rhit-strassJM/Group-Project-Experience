@@ -46,14 +46,14 @@ SBanalysis <- function(data1, data2, data_descriptor){
   ttest <- t.test(data1, data2, var.equal=TRUE)
   
   my_list <- list("data_descriptor" = data_descriptor,
-                  "data1_mean" = data1_mean,
-                  "data2_mean" = data2_mean,
-                  "data1_sd" = data1_sd,
-                  "data2_sd" = data2_sd,
-                  "data1_lowerbound" = data1_lowerbound,
-                  "data1_upperbound" = data1_upperbound,
-                  "data2_lowerbound" = data2_lowerbound,
-                  "data2_upperbound" = data2_upperbound,
+                  # "data1_mean" = data1_mean,
+                  # "data2_mean" = data2_mean,
+                  # "data1_sd" = data1_sd,
+                  # "data2_sd" = data2_sd,
+                  # "data1_lowerbound" = data1_lowerbound,
+                  # "data1_upperbound" = data1_upperbound,
+                  # "data2_lowerbound" = data2_lowerbound,
+                  # "data2_upperbound" = data2_upperbound,
                   "ttest" = ttest["p.value"][[1]]
                   )
   return(my_list)
@@ -70,15 +70,15 @@ sbList = list(sb_whiteBlack,sb_whiteAsian, sb_whiteHispanic,sb_blackAsian,sb_bla
 
 
 col_tibble <- ~tibble("data_descriptor" = .x[[1]],
-                      "data1_mean" = .x[[2]],
-                      "data2_mean" = .x[[3]],
-                      "data1_sd" = .x[[4]],
-                      "data2_sd" = .x[[5]],
-                      "data1_lowerbound" = .x[[6]],
-                      "data1_upperbound" = .x[[7]],
-                      "data2_lowerbound" = .x[[8]],
-                      "data2_upperbound" = .x[[9]],
-                      "ttest" = .x[[10]]
+                      # "data1_mean" = .x[[2]],
+                      # "data2_mean" = .x[[3]],
+                      # "data1_sd" = .x[[4]],
+                      # "data2_sd" = .x[[5]],
+                      # "data1_lowerbound" = .x[[6]],
+                      # "data1_upperbound" = .x[[7]],
+                      # "data2_lowerbound" = .x[[8]],
+                      # "data2_upperbound" = .x[[9]],
+                      "ttest" = .x[[2]]
 )
 
 df <- purrr::map_dfr(sbList, col_tibble)
