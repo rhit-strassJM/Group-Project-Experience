@@ -211,3 +211,74 @@ df220230 <- purrr::map_dfr(list220230, col_tibble)
 df220other <- purrr::map_dfr(list220other, col_tibble)
 df230other <- purrr::map_dfr(list230other, col_tibble)
 dfintroother <- purrr::map_dfr(listintroother, col_tibble)
+
+data_introMaster <- data_intro
+data_otherMaster <- data_other
+
+#introwhite vs intrononwhite
+data_holder<- data_introMaster
+data_intro <- subset(data_holder, (Race=="White"))
+data_other <- subset(data_holder, !(Race=="White"))
+sb1_introother <- SBanalysis(data_intro$SB1, data_other$SB1, "sb1_introother")
+sb2_introother <- SBanalysis(data_intro$SB2, data_other$SB2, "sb2_introother")
+sb3_introother <- SBanalysis(data_intro$SB3, data_other$SB3, "sb3_introother")
+sb4_introother <- SBanalysis(data_intro$SB4, data_other$SB4, "sb4_introother")
+sb5_introother <- SBanalysis(data_intro$SB5, data_other$SB5, "sb5_introother")
+sb6_introother <- SBanalysis(data_intro$SB6, data_other$SB6, "sb6_introother")
+listintroother = list(sb1_introother,sb2_introother, sb3_introother,
+                      sb4_introother,sb5_introother, sb6_introother
+                      # conflict_230other, ps_230other,
+                      # satisfaction_230other, cs_230other, cn_230other
+)
+dfintroWhiteNonwhite <- purrr::map_dfr(listintroother, col_tibble)
+
+#otherwhite vs othernonwhite
+data_holder<- data_otherMaster
+data_intro <- subset(data_holder, (Race=="White"))
+data_other <- subset(data_holder, !(Race=="White"))
+sb1_introother <- SBanalysis(data_intro$SB1, data_other$SB1, "sb1_introother")
+sb2_introother <- SBanalysis(data_intro$SB2, data_other$SB2, "sb2_introother")
+sb3_introother <- SBanalysis(data_intro$SB3, data_other$SB3, "sb3_introother")
+sb4_introother <- SBanalysis(data_intro$SB4, data_other$SB4, "sb4_introother")
+sb5_introother <- SBanalysis(data_intro$SB5, data_other$SB5, "sb5_introother")
+sb6_introother <- SBanalysis(data_intro$SB6, data_other$SB6, "sb6_introother")
+listintroother = list(sb1_introother,sb2_introother, sb3_introother,
+                      sb4_introother,sb5_introother, sb6_introother
+                      # conflict_230other, ps_230other,
+                      # satisfaction_230other, cs_230other, cn_230other
+)
+dfotherWhiteNonwhite <- purrr::map_dfr(listintroother, col_tibble)
+
+#introwhite vs introBlack
+data_holder<- data_introMaster
+data_intro <- subset(data_holder, (Race=="White"))
+data_other <- subset(data_holder, (Race=="Black"))
+sb1_introother <- SBanalysis(data_intro$SB1, data_other$SB1, "sb1_introother")
+sb2_introother <- SBanalysis(data_intro$SB2, data_other$SB2, "sb2_introother")
+sb3_introother <- SBanalysis(data_intro$SB3, data_other$SB3, "sb3_introother")
+sb4_introother <- SBanalysis(data_intro$SB4, data_other$SB4, "sb4_introother")
+sb5_introother <- SBanalysis(data_intro$SB5, data_other$SB5, "sb5_introother")
+sb6_introother <- SBanalysis(data_intro$SB6, data_other$SB6, "sb6_introother")
+listintroother = list(sb1_introother,sb2_introother, sb3_introother,
+                      sb4_introother,sb5_introother, sb6_introother
+                      # conflict_230other, ps_230other,
+                      # satisfaction_230other, cs_230other, cn_230other
+)
+dfintroWhiteBlack <- purrr::map_dfr(listintroother, col_tibble)
+
+#otherwhite vs otherBlack
+data_holder<- data_otherMaster
+data_intro <- subset(data_holder, (Race=="White"))
+data_other <- subset(data_holder, (Race=="Black"))
+sb1_introother <- SBanalysis(data_intro$SB1, data_other$SB1, "sb1_introother")
+sb2_introother <- SBanalysis(data_intro$SB2, data_other$SB2, "sb2_introother")
+sb3_introother <- SBanalysis(data_intro$SB3, data_other$SB3, "sb3_introother")
+sb4_introother <- SBanalysis(data_intro$SB4, data_other$SB4, "sb4_introother")
+sb5_introother <- SBanalysis(data_intro$SB5, data_other$SB5, "sb5_introother")
+sb6_introother <- SBanalysis(data_intro$SB6, data_other$SB6, "sb6_introother")
+listintroother = list(sb1_introother,sb2_introother, sb3_introother,
+                      sb4_introother,sb5_introother, sb6_introother
+                      # conflict_230other, ps_230other,
+                      # satisfaction_230other, cs_230other, cn_230other
+)
+dfotherWhiteBlack <- purrr::map_dfr(listintroother, col_tibble)

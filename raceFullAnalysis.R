@@ -191,3 +191,25 @@ dfAsianHispanic <- purrr::map_dfr(asianHispanicList, col_tibble)
 dfWhiteNonwhite <- purrr::map_dfr(whiteNonwhiteList, col_tibble)
 
 
+# yay! can one of you also do: 120+220+230+ white vs. 120+220+230+ nonwhite and all other courses+white vs. all other courses+nonwhite
+# 
+# like 1
+
+sb1_whiteNonwhite <- SBanalysis(data_white$SB1, data_nonwhite$SB1, "sb1_whiteNonwhite")
+sb2_whiteNonwhite <- SBanalysis(data_white$SB2, data_nonwhite$SB2, "sb2_whiteNonwhite")
+sb3_whiteNonwhite <- SBanalysis(data_white$SB3, data_nonwhite$SB3, "sb3_whiteNonwhite")
+sb4_whiteNonwhite <- SBanalysis(data_white$SB4, data_nonwhite$SB4, "sb4_whiteNonwhite")
+sb5_whiteNonwhite <- SBanalysis(data_white$SB5, data_nonwhite$SB5, "sb5_whiteNonwhite")
+sb6_whiteNonwhite <- SBanalysis(data_white$SB6, data_nonwhite$SB6, "sb6_whiteNonwhite")
+conflict_whiteNonwhite <- SBanalysis(data_white$Conflict, data_nonwhite$Conflict, "conflict_whiteNonwhite")
+ps_whiteNonwhite <- SBanalysis(data_white$PS, data_nonwhite$PS, "ps_whiteNonwhite")
+satisfaction_whiteNonwhite <- SBanalysis(data_white$Satisfaction, data_nonwhite$Satisfaction, "satisfaction_whiteNonwhite")
+cs_whiteNonwhite <- SBanalysis(data_white$ContributionSelf, data_nonwhite$ContributionSelf, "cs_whiteNonwhite")
+cn_whiteNonwhite <- SBanalysis(data_white$ContributionNoSelf, data_nonwhite$ContributionNoSelf, "cn_whiteNonwhite")
+whiteNonwhiteList = list(sb1_whiteNonwhite,sb2_whiteNonwhite, sb3_whiteNonwhite,
+                         sb4_whiteNonwhite,sb5_whiteNonwhite, sb6_whiteNonwhite,
+                         conflict_whiteNonwhite, ps_whiteNonwhite,
+                         satisfaction_whiteNonwhite, cs_whiteNonwhite, cn_whiteNonwhite)
+
+
+# and 120+220+230+ white vs. 120+220+230+ black and all other courses+white vs. all other courses+black
